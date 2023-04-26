@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달 테스트</title>
+    <link rel="stylesheet" href="https://supsok.github.io/gbsw/touchstrap/css/touchstrap.css">
+</head>
+<body>
+    
+
+    <section class="page center">
+        <header class="bar bar-nav">
+            <h1 class="title">경소고</h1>
+        </header>
+
+        <main class="content">
+            <ul class="table-view">
+                <li class="table-view-cell media">
+                  <a class="navigate-right">
+                    <img class="media-object pull-left" src="http://placehold.it/42x42">
+                    <div class="media-body">
+                      Item 1
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="table-view-cell media">
+                  <a class="navigate-right">
+                    <img class="media-object pull-left" src="http://placehold.it/42x42">
+                    <div class="media-body">
+                      Item 1
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="table-view-cell media">
+                  <a class="navigate-right">
+                    <img class="media-object pull-left" src="http://placehold.it/42x42">
+                    <div class="media-body">
+                      Item 1
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+        </main>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://supsok.github.io/gbsw/touchstrap/js/touchstrap.js"></script>
+
+    <script>
+        $('#modal01').on('show.rc.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var subject = button.data('subject')
+            var photo = button.data('photo')
+            var article = button.data('article')
+            var modal = $(this)
+            modal.find('.title').text(subject)
+            modal.find('img').attr('src',photo)
+            modal.find('article').text(article)
+        
+        })
+
+    </script>
+
+
+    
+</body>
+</html>

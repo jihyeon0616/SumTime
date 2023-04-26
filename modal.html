@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달 테스트</title>
+    <link rel="stylesheet" href="https://supsok.github.io/gbsw/touchstrap/css/touchstrap.css">
+</head>
+<body>
+    
+
+    <section class="page center">
+        <header class="bar bar-nav">
+            <h1 class="title">경소고</h1>
+        </header>
+        <main class="content">
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal01"
+                data-subject="안녕하세요">
+                모달호출
+            </button>
+        </main>
+    </section>
+
+    <section class="modal" id="modal01">
+        <header class="bar bar-nav">
+            <h1 class="title">모달제목</h1>
+        </header>
+        <main class="content">
+            
+        </main>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://supsok.github.io/gbsw/touchstrap/js/touchstrap.js"></script>
+
+    <script>
+        $('#modal01').on('show.rc.modal', function(event) {
+            var button = $(event.relatedTarget)
+            var subject = button.data('subject')
+            var modal = $(this)
+            modal.find('.title').text(subject)
+        })
+
+    </script>
+
+
+    
+</body>
+</html>
